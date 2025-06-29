@@ -1,4 +1,4 @@
-package HotelRoomManagement;
+package HostelRoomManagement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +24,7 @@ public class RoomInventory {
             for (Room room : roomList){
                 if (room.getCapacity()>room.allocatedStudentIdList.size()){
                     room.allocatedStudentIdList.add(student.getStudentId());
+                    student.setStatus("Allocated");
                     return true;
                 }
             }
@@ -31,15 +32,22 @@ public class RoomInventory {
         return false;
     }
 
-    public boolean vacateStudent(int studentId){
+    public boolean vacateStudent(Student student){
         for (Room room : roomList){
             for (int list: room.allocatedStudentIdList){
-                if (list==studentId){
+                if (list==student.getStudentId()){
                     room.allocatedStudentIdList.remove(list);
+                    student.setStatus("Not Allocated");
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    public void showRoomInfo(){
+        for( Room room : roomList){
+            System.out.println(room.toString());
+        }
     }
 }

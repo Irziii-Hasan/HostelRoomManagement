@@ -1,4 +1,4 @@
-package HotelRoomManagement;
+package HostelRoomManagement;
 
 public class Student extends User{
     private int studentId;

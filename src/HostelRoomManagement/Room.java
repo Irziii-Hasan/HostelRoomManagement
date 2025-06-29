@@ -1,6 +1,5 @@
-package HotelRoomManagement;
+package HostelRoomManagement;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +51,7 @@ public class Room {
         return "Room{" +
                 "roomNumber=" + roomNumber +
                 ", capacity=" + capacity +
+                ", Allocated Student list= "+allocatedStudentIdList+
                 '}';
     }
 }
