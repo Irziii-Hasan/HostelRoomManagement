@@ -1,6 +1,7 @@
 package HostelRoomManagement;
 
 public class Student extends User{
+    private int count = 1;
     private int studentId;
     private String name;
     private String dept;
@@ -8,8 +9,9 @@ public class Student extends User{
     private String status="Not Allocated";
 
 
-    public Student(int studentId, String name, String dept, int semester) {
-        this.studentId = studentId;
+    public Student(String name, String dept, int semester) {
+        this.studentId = count;
+        count++;
         this.name = name;
         this.dept = dept;
         this.semester = semester;
